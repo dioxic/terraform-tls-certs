@@ -1,6 +1,6 @@
 variable "dns_names" {
   type = list(string)
-  description = "list of DNS names"
+  description = "Subject alternative names for generated certificates."
   default = []
 }
 
@@ -10,13 +10,9 @@ variable "ca_cert_pem" {}
 
 variable "common_name" {}
 
-variable "organizational_unit" {
-  default = "PS"
-}
+variable "organizational_unit" {}
 
-variable "organization" {
-  default = "MongoDB"
-}
+variable "organization" {}
 
 variable "validity_period_hours" {
   type    = number
