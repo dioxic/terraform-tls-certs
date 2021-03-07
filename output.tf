@@ -1,4 +1,12 @@
+output "private_key_pem" {
+  value = tls_private_key.main.private_key_pem
+}
+
 output "cert_pem" {
+  value = tls_locally_signed_cert.main.cert_pem
+}
+
+output "combined_pem" {
   value = join("",[tls_locally_signed_cert.main.cert_pem, tls_private_key.main.private_key_pem])
 }
 
